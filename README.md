@@ -58,6 +58,9 @@ Each microservice runs in its own Docker container.
 ## Author
 **Name:** Doaa Abdeen  
 **ID:** 220243072  
+
 **Course:** Advanced Software Engineering (ICTS 6302)
+
 **To:** Dr. Abdelkareem Alashqar
+
 **Semester:** January 2026
