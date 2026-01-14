@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  # 1. Eureka Server
+  discovery-server:
+    build: ./discovery-server
+    ports:
+      - "8761:8761"
+
+  # 2. Inventory Service
+  inventory-service:
+    build: ./inventory-service
+    ports:
+      - "8082:8082"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+
+  # 3. Product Service
+  product-service:
+    build: ./product-service
+    ports:
+      - "8083:8083"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+
+  # 4. The gate (API Gateway)
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
