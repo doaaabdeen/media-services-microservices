@@ -8,7 +8,7 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
 
-    // 1. المطلب (1.c): عملية عرض المنتجات (Read Operation)
+    // 1. Requirement (1.c): Product Display Operation (Read Operation)
     @GetMapping
     public List<Product> getAllProducts() {
         return List.of(
@@ -17,18 +17,19 @@ public class ProductController {
         );
     }
 
-    // 2. المطلب (1.d): التواصل مع خدمة المخزون (Inter-service Communication)
+    // 2. Requirement (1.d): Communication with the Inventory Service (Inter-service Communication)
     @GetMapping("/check-stock/{id}")
     public String checkProductStock(@PathVariable String id) {
         RestTemplate restTemplate = new RestTemplate();
         try {
-            // نطلب البيانات من خدمة المخزون (بورت 8082)
+// We request data from the inventory service (port 8082)
             String url = "http://localhost:8082/inventory/" + id;
             Boolean inStock = restTemplate.getForObject(url, Boolean.class);
 
-            return (inStock != null && inStock) ? "المنتج متوفر في المخزون" : "عذراً، المنتج نفد من المخزون";
+            return (inStock != null && inStock) ? "The product is in stock": "Sorry, the product is out of stock";
         } catch (Exception e) {
-            return "خطأ: لم نتمكن من الاتصال بخدمة المخزون حالياً";
+            return  "Error: We are currently unable to connect to the inventory service.";
         }
     }
+
 }
