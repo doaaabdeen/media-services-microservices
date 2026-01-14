@@ -8,7 +8,8 @@ public class InventoryController {
 
     @GetMapping("/{productId}")
     public boolean isInStock(@PathVariable String productId) {
-        // سنفترض أن المنتج رقم 1 متوفر والمنتج رقم 2 غير متوفر
+        //  We will assume that product number 1 is available and product number 2 is not available
         return productId.equals("1");
     }
+
 }
