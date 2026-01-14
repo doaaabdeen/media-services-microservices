@@ -15,7 +15,7 @@ public class DiscoveryServerApplication {
 		try {
 			SpringApplication.run(DiscoveryServerApplication.class, args);
 		} catch (Throwable e) {
-			e.printStackTrace(); // هذا سيطبع الخطأ الكامل في نافذة التشغيل
+			e.printStackTrace();
 		}
 	}
 
