@@ -12,7 +12,7 @@ public class ProductServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(ProductServiceApplication.class, args);
     }
-    @Bean // هذا السطر ضروري جداً للمطلب 1.d
+    @Bean 
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
