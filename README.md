@@ -42,7 +42,7 @@ By using `docker-compose`, all services are orchestrated to run together in a pr
 3. **Product Service**: Manages media products.
 4. **Inventory Service**: Manages stock levels.
 
-### How to Run:
+## How to Run:
 1. Ensure **Docker Desktop** is running.
 2. Navigate to the project root folder.
 3. Run the following command in your terminal:
