@@ -45,8 +45,11 @@ The system is fully containerized to ensure environment consistency:
    ```bash
    docker-compose up --build
 
-## Conclusion:
+## Conclusion: 
 The project demonstrates a complete microservices lifecycle from development to containerized deployment.
+
+
+
 ---
 
 ## Author
