@@ -11,8 +11,8 @@ The application includes multiple independent services, where each service manag
 
 The system consists of the following main components:
 
-* **Discovery Server (Netflix Eureka)**: Used for service registration and discovery, allowing all microservices to find and communicate with each other.
-* **API Gateway (Spring Cloud Gateway)**: Acts as a single entry point for all client requests, routing them to the appropriate backend microservices.
+* **Discovery Server (Netflix Eureka)**: Used for service registration and discovery, allowing all microservices to find and communicate with each other (Port: 8761)..
+* **API Gateway (Spring Cloud Gateway)**: Acts as a single entry point for all client requests, routing them to the appropriate backend microservices (Port: 8080).
 * **Product Service**: Responsible for managing media product information, categories, and details.
 * **Inventory Service**: Manages the stock levels and availability of media products in the system.
 
@@ -26,21 +26,17 @@ The system consists of the following main components:
 - **Version Control**: Git & GitHub
 
 ## Deployment
-The application is fully containerized and deployed using **Docker Desktop**.  
-By using `docker-compose`, all services are orchestrated to run together in a private virtual network.
+The system is fully containerized to ensure environment consistency:
 
+**Dockerfile:** Created for each microservice to package the application with its dependencies.
+
+**Docker Compose:** Used to orchestrate the entire ecosystem. With a single command, the Discovery Server, Gateway, and business services start in a dedicated virtual network.
    
 ## Architecture & Technologies:
 * **Spring Boot**: For building individual services.
 * **Netflix Eureka**: Service Discovery Server.
 * **Spring Cloud Gateway**: API Gateway for routing.
 * **Docker & Docker Compose**: For containerization and easy deployment.
-
-## Services:
-1. **Discovery Server**: Runs on port `8761`.
-2. **API Gateway**: Runs on port `8080`.
-3. **Product Service**: Manages media products.
-4. **Inventory Service**: Manages stock levels.
 
 ## How to Run:
 1. Ensure **Docker Desktop** is running.
@@ -49,10 +45,8 @@ By using `docker-compose`, all services are orchestrated to run together in a pr
    ```bash
    docker-compose up --build
 
-## Deployment
-The application is deployed using Docker Desktop.  
-Each microservice runs in its own Docker container.
-
+## Conclusion:
+The project demonstrates a complete microservices lifecycle from development to containerized deployment.
 ---
 
 ## Author
